@@ -1,0 +1,28 @@
+@import url(https://fonts.googleapis.com/css?family=Titillium+Web:900);
+@import url(https://fonts.googleapis.com/css?family=PT+Sans);
+
+* {
+	font-family: 'PT Sans', sans-serif;;
+	color: rgb(37, 37, 37);
+}
+
+html, body {
+	height: 100%!important;
+}
+
+.header-title {
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: #ff0000;
+	-webkit-text-stroke: 3px #fff;
+	font-family: 'Titillium Web', sans-serif;
+	line-height: 1;
+	text-align: center;
+	font-size: 7em;
+}
+
+.header-background-image {
+	background-image: url("../images/tokyo.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center top;
+}
