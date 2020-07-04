@@ -1,9 +1,16 @@
-@import url(https://fonts.googleapis.com/css?family=Titillium+Web:900);
-@import url(https://fonts.googleapis.com/css?family=PT+Sans);
+/* @import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@900&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans&display=swap');
+
+@font-face {
+	font-family: "TitilliumWeb-Black";
+	src: url("../assets/font/Titillium_Web/TitilliumWeb-Black.woff2") format("woff2"); /* Modern Browsers */
+	font-weight: normal;
+	font-style: normal;
+}
+
 
 * {
-	font-family: 'PT Sans', sans-serif;;
-	color: rgb(37, 37, 37);
+	font-family: 'PT Sans', sans-serif;
 }
 
 html, body {
@@ -14,15 +21,92 @@ html, body {
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: #ff0000;
 	-webkit-text-stroke: 3px #fff;
-	font-family: 'Titillium Web', sans-serif;
-	line-height: 1;
-	text-align: center;
-	font-size: 7em;
+	font-family: "TitilliumWeb-Black", sans-serif;
+	transition: font-size .75s ease-out;
+	cursor: auto;
+	z-index: 1;
 }
 
 .header-background-image {
-	background-image: url("../images/tokyo.jpg");
+	background-image: url("../assets/img/tokyo.jpg");
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center top;
+	z-index: -1;
+}
+
+.margin-auto {
+	margin: 0 auto;
+}
+
+.min-h-100 {
+	min-height: 100%!important;
+}
+
+.header-title-inherit {
+	font-family: "TitilliumWeb-Black", sans-serif;
+	font-size: inherit;
+	cursor: pointer;
+	line-height: inherit;
+}
+
+.margin-top-for-header {
+	margin-top: 5.5rem;
+}
+
+/* Small */
+@media (min-width: 576px) {
+	.card-columns {
+        -webkit-column-count: 1;
+        -moz-column-count: 1;
+        column-count: 1;
+    }
+}
+  
+/* Medium */
+@media (min-width: 768px) {
+	.card-columns {
+        -webkit-column-count: 2;
+        -moz-column-count: 2;
+        column-count: 2;
+    }
+}
+
+/* Large */
+@media (min-width: 992px) {
+	.card-columns {
+        -webkit-column-count: 3;
+        -moz-column-count: 3;
+        column-count: 3;
+    }
+}
+
+/* Material Icons */
+.material-icons.md-16 { font-size: 16px; }
+.material-icons.md-18 { font-size: 18px; }
+.material-icons.md-24 { font-size: 24px; }
+.material-icons.md-36 { font-size: 36px; }
+.material-icons.md-48 { font-size: 48px; }
+
+@font-face {
+	font-family: 'Material Icons Outlined';
+	font-style: normal;
+	font-weight: 400;
+	src: url("../assets/font/Material-Icons-Outlined/material-icons-outlined.woff2") format('woff2');
+  }
+  
+.material-icons-outlined {
+	font-family: 'Material Icons Outlined';
+	font-weight: normal;
+	font-style: normal;
+	font-size: 24px;
+	line-height: 1;
+	letter-spacing: normal;
+	text-transform: none;
+	display: inline-block;
+	white-space: nowrap;
+	word-wrap: normal;
+	direction: ltr;
+	-webkit-font-feature-settings: 'liga';
+	-webkit-font-smoothing: antialiased;
 }

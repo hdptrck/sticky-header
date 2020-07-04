@@ -1,30 +1,41 @@
 $(document).ready(function () {
-	$('a[href^="#"]').on('click', function (event) {
-		let href = $(this).attr('href');
+	const header = $('#header-title');
+	const headerHomeSpan = $('#header-title > a');
+	let sticky = header.offset().top;
+
+	const animateScrolling = function (elementToScroll, event) {
+		event.preventDefault();
 		$('html, body').animate({
-			scrollTop: $(href).offset().top
+			scrollTop: $(elementToScroll).offset().top
 		}, {
 			easing: 'swing',
 			duration: 1000
 		});
-		event.preventDefault();
+	};
+
+	$('.scroll-down').click(function (event) {
+		animateScrolling($('#home'), event);
 	});
 
-	const header = $('#header-title');
-	let sticky = header.offset().top;
+	$('a[href^="#"]').click(function (event) {
+		let elementToScroll = $(this).attr('href');
+		animateScrolling($(this).attr('href'), event);
+	});
 
 	$(window).resize(function () {
-		sticky = header.offset().top;
+		sticky = ($(window).height() - header.height()) / 2;
 	});
+
+	const classListBeforeScroll = 'margin-auto display-1';
+	const classListAfterScroll = 'fixed-top display-4';
 
 	$(window).scroll(function () {
 		if ($(window).scrollTop() > sticky) {
-			header.addClass("fixed-top bg-primary");
-			header.removeClass("col");
+			header.removeClass(classListBeforeScroll);
+			header.addClass(classListAfterScroll);
 		} else {
-			header.removeClass("fixed-top bg-primary");
-			header.addClass("col");
-
+			header.removeClass(classListAfterScroll);
+			header.addClass(classListBeforeScroll);
 		}
 	});
 });
